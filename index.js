@@ -1,5 +1,7 @@
 function startGame(){
   gameArea.start();
+  frame();
+  head();
 }
 
 const gameArea = {
@@ -12,3 +14,20 @@ const gameArea = {
     document.body.insertBefore(this.canvas, document.body.childNodes[0])
   }
 }
+
+function frame(){
+  ctx = gameArea.context;
+  ctx.fillStyle = "black";
+  ctx.fillRect(400, 50, 15, 300) //vertical post
+  ctx.fillRect(250, 50, 150, 15 ) //horizotal top beam
+  ctx.fillRect(0, 350, 500, 100 ) //base
+}
+
+function head(){
+  ctx = gameArea.context;
+  ctx.beginPath();
+  ctx.arc(250, 100, 30, 0, Math.PI * 2, true);
+  ctx.fill();
+
+}
+
