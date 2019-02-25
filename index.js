@@ -1,3 +1,5 @@
+import letterKeyCodes from '/keycodes.js'
+
 let wrongGuessCount = 6;
 let guesses = {};
 
