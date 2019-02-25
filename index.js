@@ -2,6 +2,12 @@ function startGame(){
   gameArea.start();
   frame();
   head();
+  body();
+  rightArm();
+  leftArm();
+  leftLeg();
+  rightLeg();
+  gameOver();
 }
 
 const gameArea = {
@@ -28,6 +34,47 @@ function head(){
   ctx.beginPath();
   ctx.arc(250, 100, 30, 0, Math.PI * 2, true);
   ctx.fill();
+}
 
+function body(){
+  ctx = gameArea.context;
+  ctx.fillRect(245, 135, 10, 100)
+}
+
+function rightArm(){
+  ctx = gameArea.context;
+  ctx.fillRect(180, 135, 60, 10)
+}
+
+function leftArm(){
+  ctx = gameArea.context;
+  ctx.fillRect(260, 135, 60, 10)
+}
+
+function leftLeg(){
+  ctx = gameArea.context;
+  ctx.beginPath();
+  ctx.moveTo(258, 233)
+  ctx.lineTo(328, 303)
+  ctx.lineTo(321, 310)
+  ctx.lineTo(251, 240)
+  ctx.fill()
+}
+
+function rightLeg(){
+  ctx = gameArea.context;
+  ctx.beginPath();
+  ctx.moveTo(242, 233)
+  ctx.lineTo(249, 240)
+  ctx.lineTo(179, 310)
+  ctx.lineTo(172, 303)
+  ctx.fill();
+}
+
+function gameOver(){
+  ctx = gameArea.context;
+  ctx.font = '24px serif';
+  ctx.fillStyle = 'red'
+  ctx.fillText('GAME OVER', 175, 30)
 }
 
