@@ -1,14 +1,22 @@
+let wrongGuessCount = 6;
+let guesses = {};
+
 function startGame(){
   gameArea.start();
+  addGuess();
   frame();
-  head();
-  body();
-  rightArm();
-  leftArm();
-  leftLeg();
-  rightLeg();
-  gameOver();
+
+  if(wrongGuessCount > 0) { head() };
+  if(wrongGuessCount > 1) { body() };
+  if(wrongGuessCount > 2) { rightArm() };
+  if(wrongGuessCount > 3) { leftArm() };
+  if(wrongGuessCount > 4) { leftLeg() };
+  if(wrongGuessCount > 5) { rightLeg() };
+  if(wrongGuessCount > 5) { gameOver() };
+
+  console.log(letterKeyCodes[65])
 }
+
 
 const gameArea = {
   canvas: document.getElementById("myCanvas"),
@@ -26,7 +34,7 @@ function frame(){
   ctx.fillStyle = "black";
   ctx.fillRect(400, 50, 15, 300) //vertical post
   ctx.fillRect(250, 50, 150, 15 ) //horizotal top beam
-  ctx.fillRect(0, 350, 500, 100 ) //base
+  ctx.fillRect(0, 350, 500, 200 ) //base
 }
 
 function head(){
@@ -76,5 +84,11 @@ function gameOver(){
   ctx.font = '24px serif';
   ctx.fillStyle = 'red'
   ctx.fillText('GAME OVER', 175, 30)
+}
+
+function addGuess(){
+  window.addEventListener('keydown', function (e){
+    if(!guesses[e.keyCode]) { guesses[e.keyCode] = true }
+  })
 }
 
