@@ -2,7 +2,7 @@
   "name": "hangman",
   "version": "1.0.0",
   "description": "hangman game",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "mocha",
     "start": "webpack-dev-server"
@@ -40,6 +40,7 @@
     "file-loader": "^1.1.10",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.4"
   }
 }
