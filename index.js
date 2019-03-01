@@ -1,4 +1,5 @@
-import letterKeyCodes from '/keycodes.js'
+// import letterKeyCodes from '/keycodes.js';
+const letterCodes = require('./keycodes')
 
 let wrongGuessCount = 6;
 let guesses = {};
@@ -16,12 +17,13 @@ function startGame(){
   if(wrongGuessCount > 5) { rightLeg() };
   if(wrongGuessCount > 5) { gameOver() };
 
-  console.log(letterKeyCodes[65])
+  console.log(letterCodes[65])
 }
 
 
 const gameArea = {
-  canvas: document.getElementById("myCanvas"),
+  // canvas: document.getElementById("myCanvas"),
+  canvas: $("#myCanvas"),
 
   start: function(){
     this.canvas.width = 500,
