@@ -1,9 +1,9 @@
-import drawParts from "./drawParts.js";
-import letterKeyCodes from './keycodes.js';
+const drawParts = require("./drawParts.js");
+const addGuess = require("./addGuess");
+const letterKeyCodes = require('./keycodes.js');
 import "./index.css";
 
 let wrongGuessCount = 1;
-let guesses = {};
 
 function startGame(){
   drawParts.gameArea.start();
@@ -19,18 +19,6 @@ function startGame(){
   if(wrongGuessCount > 5) { drawParts.gameOver() };
 
   console.log(letterKeyCodes[66])
-}
-
-
-function addGuess(){
-  window.addEventListener('keydown', function (e){
-    if(!guesses[e.keyCode]) { guesses[e.keyCode] = true }
-    else{
-      console.log('already tried that letter')
-    }
-    console.log(guesses)
-    
-  })
 }
 
 startGame();
