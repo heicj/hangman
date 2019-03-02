@@ -26,3 +26,5 @@ const letterKeyCodes = {
  89: 'y',
  90: 'z'
 }
+
+module.exports = letterKeyCodes

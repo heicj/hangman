@@ -1,23 +1,3 @@
-let wrongGuessCount = 6;
-let guesses = {};
-
-function startGame(){
-  gameArea.start();
-  addGuess();
-  frame();
-
-  if(wrongGuessCount > 0) { head() };
-  if(wrongGuessCount > 1) { body() };
-  if(wrongGuessCount > 2) { rightArm() };
-  if(wrongGuessCount > 3) { leftArm() };
-  if(wrongGuessCount > 4) { leftLeg() };
-  if(wrongGuessCount > 5) { rightLeg() };
-  if(wrongGuessCount > 5) { gameOver() };
-
-  console.log(letterKeyCodes[65])
-}
-
-
 const gameArea = {
   canvas: document.getElementById("myCanvas"),
 
@@ -30,7 +10,7 @@ const gameArea = {
 }
 
 function frame(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillStyle = "black";
   ctx.fillRect(400, 50, 15, 300) //vertical post
   ctx.fillRect(250, 50, 150, 15 ) //horizotal top beam
@@ -38,29 +18,32 @@ function frame(){
 }
 
 function head(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.beginPath();
   ctx.arc(250, 100, 30, 0, Math.PI * 2, true);
   ctx.fill();
 }
 
 function body(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillRect(245, 135, 10, 100)
 }
 
+//hangman's right
 function rightArm(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillRect(180, 135, 60, 10)
 }
 
+//hangman's left
 function leftArm(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillRect(260, 135, 60, 10)
 }
 
+//hangman's left
 function leftLeg(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.beginPath();
   ctx.moveTo(258, 233)
   ctx.lineTo(328, 303)
@@ -69,8 +52,9 @@ function leftLeg(){
   ctx.fill()
 }
 
+//hangman's right
 function rightLeg(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.beginPath();
   ctx.moveTo(242, 233)
   ctx.lineTo(249, 240)
@@ -80,15 +64,20 @@ function rightLeg(){
 }
 
 function gameOver(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.font = '24px serif';
   ctx.fillStyle = 'red'
   ctx.fillText('GAME OVER', 175, 30)
 }
 
-function addGuess(){
-  window.addEventListener('keydown', function (e){
-    if(!guesses[e.keyCode]) { guesses[e.keyCode] = true }
-  })
+module.exports = drawParts = {
+    gameArea,
+    frame,
+    head,
+    body,
+    rightArm,
+    rightLeg,
+    leftArm,
+    leftLeg,
+    gameOver
 }
-
