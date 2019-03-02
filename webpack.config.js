@@ -6,7 +6,7 @@ const buildDir = 'build';
 const path = `${__dirname}/${buildDir}`;
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
     path,
     filename: 'bundle.[hash].js',
@@ -53,7 +53,7 @@ module.exports = {
         loader: 'babel-loader', 
         query:
           {
-            presets:['react']
+            // presets:['react']
           }
       },
       {

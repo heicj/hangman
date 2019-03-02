@@ -1,7 +1,7 @@
-// import letterKeyCodes from '/keycodes.js';
-const letterCodes = require('./keycodes')
+import letterKeyCodes from './keycodes.js';
+// import "./index.css";
 
-let wrongGuessCount = 6;
+let wrongGuessCount = 1;
 let guesses = {};
 
 function startGame(){
@@ -17,13 +17,13 @@ function startGame(){
   if(wrongGuessCount > 5) { rightLeg() };
   if(wrongGuessCount > 5) { gameOver() };
 
-  console.log(letterCodes[65])
+  console.log(letterKeyCodes[66])
 }
 
 
 const gameArea = {
-  // canvas: document.getElementById("myCanvas"),
-  canvas: $("#myCanvas"),
+  canvas: document.getElementById("myCanvas"),
+  // canvas: $("#myCanvas"),
 
   start: function(){
     this.canvas.width = 500,
@@ -34,7 +34,7 @@ const gameArea = {
 }
 
 function frame(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillStyle = "black";
   ctx.fillRect(400, 50, 15, 300) //vertical post
   ctx.fillRect(250, 50, 150, 15 ) //horizotal top beam
@@ -42,29 +42,29 @@ function frame(){
 }
 
 function head(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.beginPath();
   ctx.arc(250, 100, 30, 0, Math.PI * 2, true);
   ctx.fill();
 }
 
 function body(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillRect(245, 135, 10, 100)
 }
 
 function rightArm(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillRect(180, 135, 60, 10)
 }
 
 function leftArm(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.fillRect(260, 135, 60, 10)
 }
 
 function leftLeg(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.beginPath();
   ctx.moveTo(258, 233)
   ctx.lineTo(328, 303)
@@ -74,7 +74,7 @@ function leftLeg(){
 }
 
 function rightLeg(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.beginPath();
   ctx.moveTo(242, 233)
   ctx.lineTo(249, 240)
@@ -84,7 +84,7 @@ function rightLeg(){
 }
 
 function gameOver(){
-  ctx = gameArea.context;
+  let ctx = gameArea.context;
   ctx.font = '24px serif';
   ctx.fillStyle = 'red'
   ctx.fillText('GAME OVER', 175, 30)
@@ -96,3 +96,4 @@ function addGuess(){
   })
 }
 
+startGame();

@@ -27,4 +27,4 @@ const letterKeyCodes = {
  90: 'z'
 }
 
-// module.exports = letterKeyCodes
+module.exports = letterKeyCodes
