@@ -17,8 +17,7 @@ function startGame(){
   if(wrongGuessCount > 4) { drawParts.leftLeg() };
   if(wrongGuessCount > 5) { drawParts.rightLeg() };
   if(wrongGuessCount > 5) { drawParts.gameOver() };
-
-  console.log(letterKeyCodes[66])
+  
 }
 
 startGame();
