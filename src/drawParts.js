@@ -70,6 +70,17 @@ function gameOver(){
   ctx.fillText('GAME OVER', 175, 30)
 }
 
+
+function drawWrongGuesses(wrongGuessCount){
+  if(wrongGuessCount > 0) { head() };
+  if(wrongGuessCount > 1) { body() };
+  if(wrongGuessCount > 2) { rightArm() };
+  if(wrongGuessCount > 3) { leftArm() };
+  if(wrongGuessCount > 4) { leftLeg() };
+  if(wrongGuessCount > 5) { rightLeg() };
+  if(wrongGuessCount > 5) { gameOver() };
+}
+
 module.exports = drawParts = {
     gameArea,
     frame,
@@ -79,5 +90,6 @@ module.exports = drawParts = {
     rightLeg,
     leftArm,
     leftLeg,
-    gameOver
+    gameOver,
+    drawWrongGuesses
 }

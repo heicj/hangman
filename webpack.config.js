@@ -6,7 +6,7 @@ const buildDir = 'build';
 const path = `${__dirname}/${buildDir}`;
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/app.js',
   output: {
     path,
     filename: 'bundle.[hash].js',
