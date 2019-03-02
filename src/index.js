@@ -1,5 +1,5 @@
 import letterKeyCodes from './keycodes.js';
-// import "./index.css";
+import "./index.css";
 
 let wrongGuessCount = 1;
 let guesses = {};
@@ -23,7 +23,6 @@ function startGame(){
 
 const gameArea = {
   canvas: document.getElementById("myCanvas"),
-  // canvas: $("#myCanvas"),
 
   start: function(){
     this.canvas.width = 500,
@@ -93,6 +92,11 @@ function gameOver(){
 function addGuess(){
   window.addEventListener('keydown', function (e){
     if(!guesses[e.keyCode]) { guesses[e.keyCode] = true }
+    else{
+      console.log('already tried that letter')
+    }
+    console.log(guesses)
+    
   })
 }
 
