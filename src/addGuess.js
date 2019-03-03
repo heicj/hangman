@@ -8,6 +8,7 @@ const drawParts = require("./drawParts.js")
 //if not increment wrongGuessCount -done
 //if is figure out how to handle it so can use info to display
 //correct guesses
+  // can add guess to array in index of where occurs in word array
 
 //end of function need to call a redraw function to draw
 //image based on wrong guesses count.
@@ -26,6 +27,7 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed){
         console.log(alreadyGuessed)
         return;
       }
+
       if(!word.includes(letter)){
         wrongGuessCount +=1
         console.log(wrongGuessCount)
