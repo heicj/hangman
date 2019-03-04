@@ -81,6 +81,23 @@ function drawWrongGuesses(wrongGuessCount){
   if(wrongGuessCount > 5) { gameOver() };
 }
 
+function drawWord(correctGuessesArray){
+  let ctx = gameArea.context;
+  ctx.font = '30px serif';
+  ctx.fillStyle = 'white';
+  // ctx.fillText('test', 200, 300)
+  let startpx = (250 - (5 *(correctGuessesArray.length/2)));
+
+  for(let i = 0; i < correctGuessesArray.length; i++){
+    // if(correctGuessesArray[i] == ''){
+      ctx.fillText('_', (startpx + (i * 20)), 400)
+    // }
+    // else{
+      ctx.fillText(correctGuessesArray[i], (startpx + (i * 20)), 400)
+    // }
+  }
+}
+
 module.exports = drawParts = {
     gameArea,
     frame,
@@ -91,5 +108,6 @@ module.exports = drawParts = {
     leftArm,
     leftLeg,
     gameOver,
-    drawWrongGuesses
+    drawWrongGuesses,
+    drawWord
 }

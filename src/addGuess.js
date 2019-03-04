@@ -25,8 +25,9 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuesses
       console.log('these are guesses made', guesses)
       console.log('this is correct guesses', correctGuessesArray)
       drawParts.drawWrongGuesses(wrongGuessCount)
+      drawParts.drawWord(correctGuessesArray)
     })
-
+    
 
   }
 
