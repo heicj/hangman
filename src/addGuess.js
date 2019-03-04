@@ -32,7 +32,7 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuesses
         console.log(wrongGuessCount)
       }
       else{
-        correctGuessesArray = correctGuessesFunc(word, letter)
+        correctGuessesArray = correctGuessesFunc(word, letter, correctGuessesArray)
       }
       console.log(guesses)
       console.log('this is correct guesses', correctGuessesArray)

@@ -7,17 +7,19 @@ const addGuess = require('../src/addGuess');
 describe('tests addGuess function', () => {
 
     it('tests function that adds correct guess to array in right intdex', () => {
-        word = ['t', 'e', 's', 't']
-        guess = 't'
-        correctArray = correctGuesses(word, guess)
+        let word = ['t', 'e', 's', 't']
+        let correctGuessesArray = []
+        let guess = 't'
+        correctArray = correctGuesses(word, guess, correctGuessesArray)
         assert.deepEqual(correctArray, ['t','','','t'])
     })
 
     it('another test of correct guess insertion', () => {
         word = ['t', 'e', 's', 't']
         guess = 'e'
-        correctArray = correctGuesses(word, guess)
-        assert.deepEqual(correctArray, ['','e','',''])
+        let correctGuessesArray = ['t', '', '', 't']
+        correctArray = correctGuesses(word, guess, correctGuessesArray)
+        assert.deepEqual(correctArray, ['t','e','','t'])
     })
     
 })
