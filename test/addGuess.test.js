@@ -15,11 +15,17 @@ describe('tests addGuess function', () => {
     })
 
     it('another test of correct guess insertion', () => {
-        word = ['t', 'e', 's', 't']
-        guess = 'e'
+        let word = ['t', 'e', 's', 't']
+        let guess = 'e'
         let correctGuessesArray = ['t', '', '', 't']
         correctArray = correctGuesses(word, guess, correctGuessesArray)
         assert.deepEqual(correctArray, ['t','e','','t'])
     })
     
+    it('tests check for win function', () => {
+        let word = ['t', 'e', 's', 't'];
+        let correctGuessesArray = ['t', 'e', 's', 't']
+        let win = winFunc(word, correctGuessesArray)
+        assert.equal(win, true)
+    })
 })
