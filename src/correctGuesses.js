@@ -4,7 +4,7 @@ function correctGuesses(word, guess){
 
     for(let i = 0; i < word.length; i++){
         if(word[i] == guess){
-            correctArray.splice(i, 0, word[i])
+            correctArray.splice(i, 1, word[i])
         }
         count ++
     }

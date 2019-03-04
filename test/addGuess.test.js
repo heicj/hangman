@@ -12,5 +12,12 @@ describe('tests addGuess function', () => {
         correctArray = correctGuesses(word, guess)
         assert.deepEqual(correctArray, ['t','','','t'])
     })
+
+    it('another test of correct guess insertion', () => {
+        word = ['t', 'e', 's', 't']
+        guess = 'e'
+        correctArray = correctGuesses(word, guess)
+        assert.deepEqual(correctArray, ['','e','',''])
+    })
     
 })
