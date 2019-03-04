@@ -1,4 +1,4 @@
-function correctGuesses(word, guess){
+function correctGuessesFunc(word, guess){
     let correctArray = Array(word.length).fill('');
     let count = 0;
 
@@ -12,4 +12,4 @@ function correctGuesses(word, guess){
     return correctArray
 }
 
-module.exports = correctGuesses;
+module.exports = correctGuessesFunc;

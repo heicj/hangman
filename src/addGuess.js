@@ -1,4 +1,5 @@
-const drawParts = require("./drawParts.js")
+const drawParts = require("./drawParts.js");
+const correctGuessesFunc = require("./correctGuesses");
 //function needs to take word array and wrong guess count
 //as parameters also.  -done
 
@@ -13,18 +14,16 @@ const drawParts = require("./drawParts.js")
 //end of function need to call a redraw function to draw
 //image based on wrong guesses count.
 
-function addGuess(guesses, word, wrongGuessCount, alreadyGuessed){
+function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuessesArray){
     window.addEventListener('keydown', function (e){
       let letter = e.key;
 
       if(!guesses[letter]) { 
         guesses[letter] = true 
         alreadyGuessed = false
-        console.log(alreadyGuessed)
       }
       else{
         alreadyGuessed = true
-        console.log(alreadyGuessed)
         return;
       }
 
@@ -32,6 +31,11 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed){
         wrongGuessCount +=1
         console.log(wrongGuessCount)
       }
+      else{
+        correctGuessesArray = correctGuessesFunc(word, letter)
+      }
+      console.log(guesses)
+      console.log('this is correct guesses', correctGuessesArray)
       drawParts.drawWrongGuesses(wrongGuessCount)
     })
 
