@@ -4,7 +4,7 @@
   "description": "hangman game",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node ./node_modules/mocha/bin/mocha",
     "start": "webpack-dev-server"
   },
   "repository": {
