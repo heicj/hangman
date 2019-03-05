@@ -89,13 +89,33 @@ function drawWrongGuesses(wrongGuessCount){
 
 function drawWord(correctGuessesArray){
   let ctx = gameArea.context;
-  ctx.font = '24px serif';
-  ctx.fillStyle = 'white';
-  let startpx = (250 - (30 *(correctGuessesArray.length/2)));
-
+  ctx.font = '20px arial';
+  let startpx = (250 - (25 *(correctGuessesArray.length/2)));
+  let y = 380;
+  
   for(let i = 0; i < correctGuessesArray.length; i++){
-      ctx.fillText('__', (startpx + (i * 30)), 450)
-      ctx.fillText(correctGuessesArray[i].toUpperCase(), (startpx + (i * 30)), 450)
+      ctx.fillStyle = 'white';
+      ctx.fillText('_', (startpx + (i * 25)), y)
+      ctx.fillText(correctGuessesArray[i].toUpperCase(), (startpx + (i * 25)), y)
+  }
+}
+
+function drawAlphabetAndGuesses(guesses){
+  const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  let guessesArray = Object.keys(guesses)
+  let ctx = gameArea.context;
+  ctx.font = '20px arial';
+  
+  for(let i = 0; i < alphabet.length; i ++){
+    if(!guessesArray.includes(alphabet[i])){
+      ctx.fillStyle = 'white';
+      ctx.fillText(alphabet[i], 23 + (18 * i), 450)
+    }
+    else{
+      ctx.fillText(alphabet[i], 23 + (18 * i), 450)
+      ctx.fillStyle = 'yellow'
+      ctx.fillText('/', 23 + (18 * i), 450)
+    }
   }
 }
 
@@ -110,5 +130,6 @@ module.exports = drawParts = {
     leftLeg,
     gameOver,
     drawWrongGuesses,
-    drawWord
+    drawWord,
+    drawAlphabetAndGuesses
 }
