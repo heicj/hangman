@@ -104,17 +104,21 @@ function drawAlphabetAndGuesses(guesses){
   const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
   let guessesArray = Object.keys(guesses)
   let ctx = gameArea.context;
-  ctx.font = '20px arial';
+  ctx.font = '26px serif';
+  
+  ctx.fillStyle = 'white'
+  ctx.fillText('LETTERS', 190, 440)
   
   for(let i = 0; i < alphabet.length; i ++){
     if(!guessesArray.includes(alphabet[i])){
       ctx.fillStyle = 'white';
-      ctx.fillText(alphabet[i], 23 + (18 * i), 450)
+      ctx.fillText(alphabet[i], 10 + (19 * i), 470)
     }
     else{
-      ctx.fillText(alphabet[i], 23 + (18 * i), 450)
-      ctx.fillStyle = 'yellow'
-      ctx.fillText('/', 23 + (18 * i), 450)
+      ctx.fillStyle = 'red'
+      ctx.fillText(alphabet[i], 10 + (19 * i), 470)
+      ctx.fillStyle = 'red'
+      ctx.fillText(alphabet[i], 10 + (19 * i), 470)
     }
   }
 }
