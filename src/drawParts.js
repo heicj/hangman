@@ -19,6 +19,7 @@ function frame(){
 
 function head(){
   let ctx = gameArea.context;
+  ctx.fillStyle = 'black';
   ctx.beginPath();
   ctx.arc(250, 100, 30, 0, Math.PI * 2, true);
   ctx.fill();
@@ -26,24 +27,28 @@ function head(){
 
 function body(){
   let ctx = gameArea.context;
+  ctx.fillStyle = 'black';
   ctx.fillRect(245, 135, 10, 100)
 }
 
 //hangman's right
 function rightArm(){
   let ctx = gameArea.context;
+  ctx.fillStyle = 'black';
   ctx.fillRect(180, 135, 60, 10)
 }
 
 //hangman's left
 function leftArm(){
   let ctx = gameArea.context;
+  ctx.fillStyle = 'black';
   ctx.fillRect(260, 135, 60, 10)
 }
 
 //hangman's left
 function leftLeg(){
   let ctx = gameArea.context;
+  ctx.fillStyle = 'black';
   ctx.beginPath();
   ctx.moveTo(258, 233)
   ctx.lineTo(328, 303)
@@ -55,6 +60,7 @@ function leftLeg(){
 //hangman's right
 function rightLeg(){
   let ctx = gameArea.context;
+  ctx.fillStyle = 'black';
   ctx.beginPath();
   ctx.moveTo(242, 233)
   ctx.lineTo(249, 240)
@@ -83,18 +89,13 @@ function drawWrongGuesses(wrongGuessCount){
 
 function drawWord(correctGuessesArray){
   let ctx = gameArea.context;
-  ctx.font = '30px serif';
+  ctx.font = '24px serif';
   ctx.fillStyle = 'white';
-  // ctx.fillText('test', 200, 300)
-  let startpx = (250 - (5 *(correctGuessesArray.length/2)));
+  let startpx = (250 - (30 *(correctGuessesArray.length/2)));
 
   for(let i = 0; i < correctGuessesArray.length; i++){
-    // if(correctGuessesArray[i] == ''){
-      ctx.fillText('_', (startpx + (i * 20)), 400)
-    // }
-    // else{
-      ctx.fillText(correctGuessesArray[i], (startpx + (i * 20)), 400)
-    // }
+      ctx.fillText('__', (startpx + (i * 30)), 450)
+      ctx.fillText(correctGuessesArray[i].toUpperCase(), (startpx + (i * 30)), 450)
   }
 }
 

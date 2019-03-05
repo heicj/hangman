@@ -27,7 +27,7 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuesses
       drawParts.drawWrongGuesses(wrongGuessCount)
       drawParts.drawWord(correctGuessesArray)
     })
-    
+    drawParts.drawWord(correctGuessesArray)
 
   }
 

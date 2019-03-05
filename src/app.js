@@ -1,12 +1,13 @@
 const drawParts = require("./drawParts.js");
 const addGuess = require("./addGuess");
+const fetchWord = require("./fetchWord")
 const letterKeyCodes = require('./keycodes.js');
 import "./index.css";
 
 let wrongGuessCount = 0;
 let guesses = {};
-let correctGuessesArray = [];
-let word = ['p', 'o', 'r', 't', 'l', 'a', 'n', 'd'];
+let word = fetchWord();
+let correctGuessesArray = Array(word.length).fill('');;
 let alreadyGuessed = false;
 
 
