@@ -17,13 +17,13 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuesses
 
       if(!word.includes(letter)){
         wrongGuessCount +=1
-        console.log(wrongGuessCount)
+        // console.log(wrongGuessCount)
       }
       else{
         correctGuessesArray = correctGuessesFunc(word, letter, correctGuessesArray)
       }
-      console.log('these are guesses made', guesses)
-      console.log('this is correct guesses', correctGuessesArray)
+      // console.log('these are guesses made', guesses)
+      // console.log('this is correct guesses', correctGuessesArray)
       drawParts.drawWrongGuesses(wrongGuessCount)
       drawParts.drawWord(correctGuessesArray)
       drawParts.drawAlphabetAndGuesses(guesses)
