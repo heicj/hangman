@@ -27,9 +27,14 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuesses
       drawParts.drawWrongGuesses(wrongGuessCount)
       drawParts.drawWord(correctGuessesArray)
       drawParts.drawAlphabetAndGuesses(guesses)
+      
+      if(wrongGuessCount > 5){
+        setTimeout(function(){drawParts.gameOver(word)}, 1000)
+      }
     })
     drawParts.drawAlphabetAndGuesses(guesses)
     drawParts.drawWord(correctGuessesArray)
+
 
   }
 

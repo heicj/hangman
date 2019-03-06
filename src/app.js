@@ -1,26 +1,17 @@
 const drawParts = require("./drawParts.js");
 const addGuess = require("./addGuess");
 const fetchWord = require("./fetchWord")
+const randomWords = require("random-words")
 const letterKeyCodes = require('./keycodes.js');
 import "./index.css";
 
 let wrongGuessCount = 0;
 let guesses = {};
 let letter = '';
-let word = fetchWord();
+// let word = fetchWord();
+let word = randomWords().toLowerCase().split('');
 let correctGuessesArray = Array(word.length).fill('');;
 let alreadyGuessed = false;
-
-
-// const setLetter =function(e){
-//   letter = e.key
-//   console.log('this is in new event', letter)
-// }
-
-// window.addEventListener('keydown', setLetter)
-
-// window.removeEventListener('keydown', setLetter)
-
 
 function startGame(){
   drawParts.gameArea.start();

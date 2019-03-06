@@ -69,12 +69,15 @@ function rightLeg(){
   ctx.fill();
 }
 
-function gameOver(){
+function gameOver(word){
   // window.removeEventListener('keydown')
   let ctx = gameArea.context;
-  ctx.font = '24px serif';
-  ctx.fillStyle = 'red'
-  ctx.fillText('GAME OVER', 175, 30)
+  ctx.font = '30px serif';
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, 500, 500)
+  ctx.fillStyle = 'red';
+  ctx.fillText('GAME OVER', 175, 100)
+  ctx.fillText(`ANSWER WAS: ${word.join('')}`, 200 - (word.length * 10), 150)
 }
 
 
@@ -85,7 +88,7 @@ function drawWrongGuesses(wrongGuessCount){
   if(wrongGuessCount > 3) { leftArm() };
   if(wrongGuessCount > 4) { leftLeg() };
   if(wrongGuessCount > 5) { rightLeg() };
-  if(wrongGuessCount > 5) { gameOver() };
+  // if(wrongGuessCount > 5) { gameOver() };
 }
 
 function drawWord(correctGuessesArray){
