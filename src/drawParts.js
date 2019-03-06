@@ -70,6 +70,7 @@ function rightLeg(){
 }
 
 function gameOver(){
+  // window.removeEventListener('keydown')
   let ctx = gameArea.context;
   ctx.font = '24px serif';
   ctx.fillStyle = 'red'
