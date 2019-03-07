@@ -18,6 +18,7 @@ let word = [];
 let correctGuessesArray = Array(word.length).fill('');;
 let alreadyGuessed = false;
 
+
 function hideShow(){
   startScreen.style.display = 'none'
   canvas.style.display = 'block'
@@ -26,7 +27,9 @@ function hideShow(){
 const randomButton = document.getElementById('randomWordButton')
 randomButton.addEventListener('click', function(){
   word = randomWords().toLowerCase().split('');
+  correctGuessesArray = Array(word.length).fill('')
   hideShow();
+  // drawParts.drawWord(correctGuessesArray)
   startGame();
 })
 
@@ -47,6 +50,7 @@ function reset(){
 function startGame(){
   drawParts.gameArea.start();
   drawParts.frame(); //call this before addGuess so that 'word' is drawn on top of frame
+  drawParts.drawWord(correctGuessesArray);
   addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuessesArray);
 }
 
