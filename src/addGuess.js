@@ -2,6 +2,7 @@ const drawParts = require("./drawParts.js");
 const correctGuessesFunc = require("./correctGuesses");
 
 
+
 function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuessesArray){
     window.addEventListener('keydown', function (e){
       let letter = e.key;
@@ -30,6 +31,7 @@ function addGuess(guesses, word, wrongGuessCount, alreadyGuessed, correctGuesses
       
       if(wrongGuessCount > 5){
         setTimeout(function(){drawParts.gameOver(word)}, 1000)
+          wrongGuessCount = 0;
       }
     })
     drawParts.drawAlphabetAndGuesses(guesses)
